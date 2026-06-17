@@ -1,1 +1,40 @@
+VMware Network Types (VMnet) – Quick Summary
+1. Bridged Network
+The VM acts like a physical computer on the network.
+It gets its own IP address from the router/DHCP server.
+The VM and the host can communicate with each other.
+Other devices on the network can also access the VM.
 
+Easy to remember:
+
+The VM is a separate device on the same network as the host.
+
+2. NAT Network
+The VM accesses the network and Internet through the host.
+The VM shares the host's public IP address.
+The VM can communicate with the host.
+Devices outside the NAT network cannot directly access the VM.
+
+Easy to remember:
+
+The VM uses the host as a gateway to access the Internet.
+
+3. Host-Only Network
+A private network between the host and the VMs.
+No Internet access by default.
+The host and VMs can communicate with each other.
+VMs on the same Host-Only network can communicate with each other.
+External devices cannot access the VMs.
+
+Easy to remember:
+
+An isolated lab network between the host and virtual machines.
+
+Comparison Table
+Feature	                      Bridged	        NAT	                Host-Only
+Internet Access	                  ✅	        ✅	                  ❌
+VM ↔ Host Communication	          ✅	        ✅	                  ✅
+VM ↔ Other Network Devices	      ✅	        ❌ Direct Access	    ❌
+VM Has Its Own IP	                ✅	        ❌ (Uses NAT)	      ✅ Private IP
+
+Best Use Case	Production/Test Network	Internet Access with Isolation
